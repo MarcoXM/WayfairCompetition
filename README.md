@@ -1,4 +1,4 @@
-# Wayfair Competition in
+# Wayfair Competition
 
 ***Using Data to Bring Customers Home***
 
