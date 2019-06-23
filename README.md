@@ -1,4 +1,4 @@
-# Wayfair Competition
+# Wayfair Competition in
 
 ***Using Data to Bring Customers Home***
 
@@ -42,7 +42,8 @@ B2B customer expected revenue **(regression)**: How much a B2B customer will spe
 
 ## Documentation
 
-#### Wayfair jupyter notebook is for preprocessing
-#### Model jupyter notebook for the modeling 
+#### Datacleaning jupyter notebook is for preprocessing
+#### Regression is for regression
+#### Model jupyter notebook for the classification modeling 
 
 
