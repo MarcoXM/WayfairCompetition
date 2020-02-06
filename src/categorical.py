@@ -93,10 +93,11 @@ if __name__ == "__main__":
 
     train_len = len(df)
 
-    df_test["target"] = -1
+    df_test['convert_30'] = -1
+    df_test['revenue_30'] = -1
     full_data = pd.concat([df, df_test])
 
-    cols = [c for c in df.columns if c not in ["id", "target"]]
+    cols = [c for c in df.columns if c not in ['convert_30', 'revenue_30']]
     cat_feats = CategoricalFeatures(full_data, 
                                     categorical_features=cols, 
                                     encoding_type="ohe",

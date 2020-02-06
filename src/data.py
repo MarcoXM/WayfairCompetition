@@ -16,18 +16,42 @@ import scipy.stats as stats
 
 
 class WayfairDataset(object):
-    def __init__(self,data_path):
+    def __init__(self,train,test,drop_missing_ratio):
         super(WayfairDataset, self).__init__()
 
-        self.data_path = data_path
-        self.df = pd.read_csv(data_path)
+        self.drop_missing_ratio = drop_missing_ratio
+        self.features = features
+        self.y_train = y_train
 
 
+    def drop_missing(self):
+        pass
+        
 
+    def finalfill(self):
+        objects = []
+        numeric_dtypes = ['int16', 'int32', 'int64', 'float16', 'float32', 'float64']
+        numerics = []
+        for i in self.features.columns:
+            if self.features[i].dtype == object:
+                objects.append(i)
+            if self.features[i].dtype in numeric_dtypes:
+                numerics.append(i)
+        self.features.update(self.features[objects].fillna('None'))
+        self.features.update(self.features[numerics].fillna(0))
 
-rawdata_train = rawdata_train.replace('NaN',np.NaN) # making the missing be Nan
-rawdata_train.fillna(rawdata_train.mean(), inplace=True) # fill with mean
+    def mainClean(self):
+        print('Cleaning ~')
+        self.toCat()
+        self.defaultfill()
+        self.zerofill()
+        self.modefill()
+        self.catnumfiil()
+        self.nonefill()
+        self.finalfill()
+        print('Cleaned !!! ')
 
+        return self.features, self.y_train
 
 
 
