@@ -88,8 +88,8 @@ class CategoricalFeatures:
 
 if __name__ == "__main__":
 
-    df = pd.read_csv("../input/train_cat.csv")
-    df_test = pd.read_csv("../input/test_cat.csv")
+    df = pd.read_csv("data/df_training_scholarjet.csv")
+    df_test = pd.read_csv("data/df_holdout_scholarjet.csv")
 
     train_len = len(df)
 
